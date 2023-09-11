@@ -1,0 +1,23 @@
+extends ./extends/layout.pug
+block main
+    include ./mixins/navbar
+    +navbar('Meeting SDK (Zoom Room)  |  ' + lab)
+    .container.my-4.bg-dark.rounded-5.shadow.border.border-dark.minWidth.maxWidth
+        .row.py-3.px-2
+            .col.me-auto.sdkMin.sdkMax
+                #meetingSDK
+            .col
+                include ./mixins/remote
+                +remote(false,cams)
+                .row.text-center
+                    .col
+                        button.btn.btn-outline-button.text-center(onClick='window.location.reload();')
+                            i.fas.fa-plug.pe-2 
+                            | Reconnect
+        
+block script 
+    script(src='/shared/zoom.js')
+    script.
+        window.$(() => {
+            window.socket.emit('startMeetingSDK', {location: window.LOCATION}, window.handleMeetingSDKEvent);
+        });

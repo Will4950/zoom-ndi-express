@@ -1,0 +1,10 @@
+extends ./extends/layout.pug
+block main
+    include ./mixins/navbar
+    +navbar('Lab Explorer')
+    .container.my-4.bg-dark.rounded-5.shadow.border.border-dark.minWidth
+        .row.row-cols-3.py-3.px-2
+            include ./mixins/card
+            +card('/assets/lab001.gif', '/ISS')
+            +card('/assets/lab002.gif', '/Moon')
+            +card('/assets/lab003.gif', '/Mars')

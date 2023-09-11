@@ -1,0 +1,13 @@
+mixin card(src, click)
+    .card-group.col
+        .card.text-center.rounded-3
+            a(href='/msdk' + click)
+                img.card-img-top(src=src)
+            .card-body.p-2
+                .d-grid.gap-2.mx-auto
+                    a.btn.btn-warning(href='/rtmp' + click style='--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .80rem;')  
+                        i.fas.fa-camera-retro.pe-2
+                        | RTMP (Direct from Camera)
+                    a.btn.btn-success(href='/msdk' + click style='--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .80rem;') 
+                        i.fas.fa-video.pe-2
+                        | Meeting SDK (Zoom Room)

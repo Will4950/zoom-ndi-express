@@ -1,0 +1,26 @@
+#modal_connecting.modal.fade(data-bs-backdrop='static' data-bs-keyboard='false' tabindex='-1')
+    .modal-dialog
+        .modal-content
+            .modal-header.bg-success
+                h5.modal-title.text-white
+                    | Searching for socket
+            .modal-body.bg-dark.text-white
+                .d-flex.flex-row.justify-content-center
+                    .mt-1.spinner-border(role='status' style='width: 16px; height: 16px')
+                    | &nbsp;&nbsp;Connecting...
+            .modal-footer.bg-dark.text-white
+
+#modal_error.modal(data-bs-backdrop='static' data-bs-keyboard='false' tabindex='-1')
+    .modal-dialog.modal-sm
+        .modal-content.bg-dark.text-white
+            .modal-header.bg-warning
+                h5.modal-title.fw-bold
+                    | Error | 
+                    span#errortitle error title
+            .modal-body
+                .d-flex.flex-row.justify-content-center
+                    .text-center.fs-5 Oh no!  This happened:
+                        #errortext.text-center.fs-6 error text
+            .modal-footer
+                .d-flex.flex-row-reverse
+                    button.btn.btn-primary(onclick='$("#modal_error").modal("hide");') Close

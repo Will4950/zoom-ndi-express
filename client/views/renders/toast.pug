@@ -1,0 +1,13 @@
+.toast-container.position-fixed.bottom-0.end-0.p-3  
+    .toast(id=toast role='alert' aria-live='assertive' aria-atomic='true' data-bs-delay=2000)
+        .toast-header.bg-primary.text-white
+            i.fas.fa-gamepad.rounded.me-2               
+            .fw-bold.me-auto Lab: #{lab}
+            .fw-bold Camera #{cam}
+            button.btn-close(type='button' data-bs-dismiss='toast' aria-label='Close')
+        .toast-body.bg-dark.text-white
+            .fs-5 #{dir}
+script.
+    window.#{toast} = new window.bootstrap.Toast(window.$("##{toast}"));
+    window.#{toast}.show();
+    

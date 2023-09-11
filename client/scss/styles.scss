@@ -1,0 +1,60 @@
+@use 'sass:map';
+@import '_config';
+
+a {
+	text-decoration: none;
+	color: map.get($theme-colors, 'primary');
+}
+
+a:hover {
+	color: map.get($theme-colors, 'info');
+}
+
+.minWidth {
+	min-width: 1300px;
+}
+
+.maxWidth {
+	max-width: 1300px;
+}
+
+.remote {
+	max-width: 380px;
+	min-width: 380px;
+}
+
+.sdkMin {
+	min-width: 830px;
+	min-height: 640px;
+}
+
+.sdkMax {
+	max-width: 830px;
+}
+
+.zmwebsdk-makeStyles-root-28,
+.zmwebsdk-makeStyles-root-226 {
+	width: 830px !important;
+	height: 635px !important;
+}
+
+.zmwebsdk-makeStyles-rootInSharing-31 {
+	width: 830px !important;
+	height: 595px !important;
+}
+
+.zmwebsdk-makeStyles-topbar-32,
+.zmwebsdk-MuiTooltip-popper,
+.zmwebsdk-makeStyles-tabs-36,
+.zmwebsdk-makeStyles-tabs-39 {
+	display: none !important;
+}
+
+.zmwebsdk-MuiPaper-root,
+.zmwebsdk-makeStyles-canvas-215 {
+	z-index: 2;
+}
+
+.remote {
+	z-index: auto;
+}

@@ -1,0 +1,29 @@
+@import 'node_modules/@fontsource/lato';
+
+$font-family-sans-serif: 'Lato', sans-serif !default;
+$headings-font-family: 'Lato', sans-serif !default;
+$font-family-base: $font-family-sans-serif !default;
+
+$fa-font-path: '../css/files' !default;
+$bootstrap-icons-font-src: url('../css/files/bootstrap-icons.woff2') format('woff2') !default;
+
+$theme-colors: (
+	'primary': #0b5cff,
+	'secondary': #1a3760,
+	'success': #4a7d5c,
+	'info': #ff7a00,
+	'warning': #a14b64,
+	'light': #f8f8fa,
+	'dark': #0d213f,
+	'button': #3564a9
+);
+
+$enable-grid-classes: true;
+$enable-gradients: true;
+$enable-rounded: true;
+$enable-shadows: true;
+
+@import 'node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
+@import 'node_modules/@fortawesome/fontawesome-free/scss/brands';
+@import 'node_modules/@fortawesome/fontawesome-free/scss/solid';
+@import 'node_modules/bootstrap/scss/bootstrap';

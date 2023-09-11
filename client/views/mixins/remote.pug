@@ -1,0 +1,45 @@
+mixin remote(rtmp, feeds)
+    .container.px-5.my-5.py-3.bg-secondary.shadow-lg.rounded-5.remote
+        .position-relative(aria-live='polite' aria-atomic='true')
+            #toasts 
+        .position-relative
+            .position-absolute.top-0.start-0
+                h3.text-white Camera Control
+                small.text-button
+                    p.p-0.m-0 Note: pan, tilt, and zoom 
+                    p.p-0.m-0 do not function in this demo
+        .row.mb-2
+            .col
+                .d-grid.gap-2.justify-content-md-end 
+                    button.btn.btn-button.remoteButton(onClick='sendPress({action: "in", display: "Zoom In"})')
+                        i.fas.fa-magnifying-glass-plus
+                    button.btn.btn-button.remoteButton(onClick='sendPress({action: "out", display: "Zoom Out"})')
+                        i.fas.fa-magnifying-glass-minus
+        .row.text-center
+            .col         
+                button.btn.btn-button(onClick='sendPress({action: "up", display: "Tilting Up"})')
+                    i.fas.fa-arrow-up-long
+        .row.text-center
+            .col.ps-5.pe-0
+                button.btn.btn-button(onClick='sendPress({action: "left", display: "Panning Left"})')
+                    i.fas.fa-arrow-left-long
+            .col.pe-5.ps-0 
+                button.btn.btn-button(onClick='sendPress({action: "right", display: "Panning Right"})')
+                    i.fas.fa-arrow-right-long
+        .row.text-center 
+            .col
+                button.btn.btn-button(onClick='sendPress({action: "down", display: "Tilting Down"})')
+                    i.fas.fa-arrow-down-long 
+        .row.mt-5.row-cols-2.text-center           
+                - var i=0
+                each feed in cams
+                    - i++;
+                    .col.p-0.d-grid
+                        if rtmp
+                            button.btn.btn-outline-button.mb-2.mx-1(id='camera' + i onClick='changeFeed("' + stream + feed + '.m3u8", ' + i +', "Activating Feed: ' + i + '")')
+                                i.fas.fa-video.pe-1
+                                | Feed #{i}
+                        else 
+                            button.btn.btn-outline-button.mb-2.mx-1(id='camera' + i onClick='changeCamera(' + i +', "Activating Camera: ' + i + '")')
+                                i.fas.fa-video.pe-1
+                                | Camera #{i}

@@ -1,0 +1,8 @@
+mixin navbar(page)
+    nav.navbar.sticky-top.navbar-dark.bg-primary.m-0.minWidth
+        .container-fluid.justify-content-start
+            a.navbar-brand(href='/')
+                i.fas.fa-video.pe-2
+                strong Zoom Monitor
+            span#navtext.navbar-text #{page}
+            

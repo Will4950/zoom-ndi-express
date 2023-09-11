@@ -1,0 +1,10 @@
+node_modules/
+.git/
+README.md
+.vscode
+npm-debug.log
+docs/
+vids/
+client/js
+client/scss
+client/vendor
